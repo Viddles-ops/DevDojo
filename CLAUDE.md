@@ -25,6 +25,8 @@ practices worth learning. No cloud deployment — local only, like oska_app.
 
 | File | Role |
 |---|---|
+| `run.ps1` | One-command launch: `.\run.ps1`. Thin wrapper over the launcher. |
+| `tutor/launcher.py` | Bootstrap + launch, **stdlib only** — creates/refreshes `.venv`, then runs app.py with the venv python. Must never import third-party packages (it runs before they're installed, possibly under another project's Python). |
 | `app.py` | Flask routes + inline templates. No business logic. |
 | `config.py` | Ports, paths, Ollama settings. No secrets (none needed). |
 | `tutor/curriculum.py` | Loads `curriculum/index.yaml`, reads lesson markdown. |

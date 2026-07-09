@@ -19,12 +19,14 @@ machine: Flask UI + local Ollama for the tutor voice. No cloud, no API keys.
 
 ```powershell
 cd DevDojo
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-python app.py
+.\run.ps1
 # → http://localhost:5057
 ```
+
+That's the whole thing. `run.ps1` calls `python -m tutor.launcher`, which
+creates DevDojo's own `.venv` on first run, installs dependencies, and starts
+the app — it always uses *this project's* venv, so it works no matter which
+(or whose) Python environment your terminal happens to have active.
 
 Requires [Ollama](https://ollama.com) running locally (`qwen2.5:7b-instruct`)
 for Ask-the-tutor; lesson browsing works without it.
@@ -32,7 +34,9 @@ for Ask-the-tutor; lesson browsing works without it.
 ## Layout
 
 ```
+run.ps1                 # one-command launch (thin wrapper)
 app.py                  # Flask routes only
+tutor/launcher.py       # bootstrap venv + start app (stdlib only)
 tutor/curriculum.py     # load/index lessons
 tutor/ollama_client.py  # local LLM calls
 tutor/progress.py       # completion tracking (data/progress.json)

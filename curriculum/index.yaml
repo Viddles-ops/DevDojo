@@ -11,7 +11,7 @@ lessons:
   - id: stack-102
     title: "Two ways to ship: Cloud Functions vs Cloud Run"
     track: stack
-    status: planned
+    status: available
     summary: "Why PO Intake has both, when each fits, and how a deploy actually works."
     sources: [po-intake-automation]
   - id: stack-103
