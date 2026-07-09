@@ -23,7 +23,7 @@ lessons:
   - id: stack-104
     title: "Local LLMs with Ollama: three patterns from your own apps"
     track: stack
-    status: planned
+    status: available
     summary: "Compute-then-narrate (OSKA), grounded Q&A (this app), and backend switching (jAIme/VetterGoat)."
     sources: [oska-platform, pemf-bot-v2, VetterGoat]
   - id: stack-105
