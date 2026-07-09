@@ -17,7 +17,7 @@ lessons:
   - id: stack-103
     title: "Secrets done right: Secret Manager + os.environ"
     track: stack
-    status: planned
+    status: available
     summary: "The credential rules of this workspace and the GEMINI_API_KEY cautionary tale."
     sources: [po-intake-automation, oska-platform]
   - id: stack-104
