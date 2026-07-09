@@ -1,0 +1,110 @@
+# DevDojo lesson catalog. status: available (file exists) | planned (to be mined).
+# sources = which real projects the lesson teaches from.
+lessons:
+  # ── Track: stack — how your projects actually work ─────────────────────
+  - id: stack-101
+    title: "Your safety net: git, GCM, and DeployGuard"
+    track: stack
+    status: available
+    summary: "How your code is protected — commits, pushes without PATs, deploy tags, and rollbacks that can't lose work."
+    sources: [DeployGuard]
+  - id: stack-102
+    title: "Two ways to ship: Cloud Functions vs Cloud Run"
+    track: stack
+    status: planned
+    summary: "Why PO Intake has both, when each fits, and how a deploy actually works."
+    sources: [po-intake-automation]
+  - id: stack-103
+    title: "Secrets done right: Secret Manager + os.environ"
+    track: stack
+    status: planned
+    summary: "The credential rules of this workspace and the GEMINI_API_KEY cautionary tale."
+    sources: [po-intake-automation, oska-platform]
+  - id: stack-104
+    title: "Local LLMs with Ollama: three patterns from your own apps"
+    track: stack
+    status: planned
+    summary: "Compute-then-narrate (OSKA), grounded Q&A (this app), and backend switching (jAIme/VetterGoat)."
+    sources: [oska-platform, pemf-bot-v2, VetterGoat]
+  - id: stack-105
+    title: "RAG anatomy: how jAIme finds the right study"
+    track: stack
+    status: planned
+    summary: "Chunking, embeddings, MMR retrieval — the pieces of pemf_bot_v2's index."
+    sources: [pemf-bot-v2]
+  - id: stack-106
+    title: "Medallion + master data: the OSKA pipeline"
+    track: stack
+    status: planned
+    summary: "Bronze/Silver/Gold, why PHI stops at Bronze, and what an upsert with a curation overlay means."
+    sources: [oska-platform]
+  - id: stack-107
+    title: "Flask vs Streamlit: picking a front door"
+    track: stack
+    status: planned
+    summary: "oska_app (Flask) vs jett_automations (Streamlit) — what each buys you."
+    sources: [oska-platform, po-intake-automation]
+  - id: stack-108
+    title: "Google Sheets/Drive APIs + Apps Script buttons"
+    track: stack
+    status: planned
+    summary: "How a button in a Sheet triggers a Cloud Function, and idempotent sheet writes."
+    sources: [po-intake-automation]
+
+  # ── Track: claude-code — the tool you drive every day ──────────────────
+  - id: cc-101
+    title: "Claude Code fundamentals: sessions, CLAUDE.md, and the operator"
+    track: claude-code
+    status: available
+    summary: "What Claude Code actually is, why every project has a CLAUDE.md, and how the chief-operator keeps sessions from starting cold."
+    sources: [_operator]
+  - id: cc-102
+    title: "Custom agents: chief-operator and deploy-guard dissected"
+    track: claude-code
+    status: planned
+    summary: "How an agent definition works (frontmatter, doctrine, routing) using your own two as the examples."
+    sources: [_operator, DeployGuard]
+  - id: cc-103
+    title: "Skills and slash commands: extending Claude Code"
+    track: claude-code
+    status: planned
+    summary: "What /commands are, which skills you have, and when to build your own."
+    sources: []
+  - id: cc-104
+    title: "Microtasks, decisions, handoffs: the operator workflow"
+    track: claude-code
+    status: planned
+    summary: "Why ~30-minute tasks with done-checks beat big vague asks, and how ADRs stop re-deciding."
+    sources: [_operator]
+
+  # ── Track: grow — practices to adopt next ──────────────────────────────
+  - id: grow-101
+    title: "Testing with pytest: your biggest gap"
+    track: grow
+    status: available
+    summary: "Almost none of your projects have tests. What to test first, and why it pays off fastest in pipelines like OSKA's."
+    sources: [oska-platform, DeployGuard]
+  - id: grow-102
+    title: "Type hints + ruff: cheap correctness"
+    track: grow
+    status: planned
+    summary: "You already write some hints (DeployGuard does) — make it systematic and add a linter."
+    sources: [DeployGuard]
+  - id: grow-103
+    title: "GitHub Actions: your first CI pipeline"
+    track: grow
+    status: planned
+    summary: "Run pytest automatically on every push — the natural next step after DeployGuard."
+    sources: []
+  - id: grow-104
+    title: "Logging and error handling patterns"
+    track: grow
+    status: planned
+    summary: "From print() to structured logs; what to do when an API call fails at 2am in a Cloud Function."
+    sources: [po-intake-automation]
+  - id: grow-105
+    title: "Dependency hygiene: venvs, pinning, and uv"
+    track: grow
+    status: planned
+    summary: "Why every project has its own .venv, when to pin versions, and the modern uv tool."
+    sources: []
