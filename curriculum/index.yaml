@@ -61,7 +61,7 @@ lessons:
   - id: cc-102
     title: "Custom agents: chief-operator and deploy-guard dissected"
     track: claude-code
-    status: planned
+    status: available
     summary: "How an agent definition works (frontmatter, doctrine, routing) using your own two as the examples."
     sources: [_operator, DeployGuard]
   - id: cc-103
