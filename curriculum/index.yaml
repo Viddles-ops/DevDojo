@@ -65,11 +65,11 @@ lessons:
     summary: "How an agent definition works (frontmatter, doctrine, routing) using your own two as the examples."
     sources: [_operator, DeployGuard]
   - id: cc-103
-    title: "Skills and slash commands: extending Claude Code"
+    title: "Extending Claude Code: skills, slash commands, and the steward you shipped"
     track: claude-code
-    status: planned
-    summary: "What /commands are, which skills you have, and when to build your own."
-    sources: []
+    status: available
+    summary: "The three extension points, project-level vs user-level agents, and the instruments-not-memories rule — taught from oska_platform's pipeline-steward."
+    sources: [oska-platform, _operator]
   - id: cc-104
     title: "Microtasks, decisions, handoffs: the operator workflow"
     track: claude-code
