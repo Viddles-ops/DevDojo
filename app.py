@@ -3,7 +3,7 @@ from flask import Flask, jsonify, redirect, render_template_string, request, url
 import markdown as md
 
 import config
-from tutor import curriculum, ollama_client, progress
+from tutor import curriculum, ollama_client, progress, quiz
 
 app = Flask(__name__)
 
@@ -64,6 +64,7 @@ def lesson(lesson_id):
     <div class='card'>{md.markdown(curriculum.lesson_text(l), extensions=['fenced_code', 'tables'])}</div>
     <form method='post' action='{url_for("complete", lesson_id=l.id)}'>
       <button>Mark complete ✅</button></form>
+    <p><a href='{url_for("quiz_page", lesson_id=l.id)}'>Take the quiz 📝</a></p>
     <h2>Ask the tutor about this lesson</h2>
     <textarea id='q' rows='3' placeholder='e.g. Why does the rescue tag matter?'></textarea>
     <button onclick='askTutor()'>Ask</button>
@@ -87,6 +88,69 @@ def lesson(lesson_id):
 def complete(lesson_id):
     progress.mark_complete(lesson_id)
     return redirect(url_for("index"))
+
+
+@app.route("/quiz/<lesson_id>")
+def quiz_page(lesson_id):
+    l = curriculum.get_lesson(lesson_id)
+    if not l or not l.is_available:
+        return redirect(url_for("index"))
+    questions = quiz.parse_quiz(curriculum.lesson_text(l))
+    if not questions:
+        return redirect(url_for("lesson", lesson_id=l.id))
+    status = ("" if ollama_client.is_up() else
+              "<p class='muted'>🔴 Tutor offline — questions are readable, "
+              "but grading needs Ollama running.</p>")
+    blocks = []
+    for i, q in enumerate(questions):
+        blocks.append(
+            f"<div class='card'><b>Q{i + 1}.</b> {q}"
+            f"<textarea id='a{i}' rows='2' placeholder='Your answer…'></textarea>"
+            f"<button onclick='grade({i})'>Check answer</button>"
+            f"<div id='r{i}' class='muted' style='display:none'></div></div>")
+    body = f"""
+    <p><a href='{url_for("lesson", lesson_id=l.id)}'>&larr; back to lesson</a></p>
+    <h2>Quiz — {l.title}</h2>
+    {status}
+    {''.join(blocks)}
+    <script>
+    async function grade(i) {{
+      const r = document.getElementById('r' + i);
+      r.style.display = 'block'; r.textContent = 'Grading (local model)…';
+      const resp = await fetch('/quiz/{l.id}/answer', {{method: 'POST',
+        headers: {{'Content-Type': 'application/json'}},
+        body: JSON.stringify({{question_idx: i,
+                               answer: document.getElementById('a' + i).value}})}});
+      const data = await resp.json();
+      if (data.error) {{ r.textContent = data.error; return; }}
+      r.textContent = (data.correct ? '✅ Correct — ' : '❌ Not quite — ') + data.feedback;
+    }}
+    </script>"""
+    return render_template_string(PAGE, body=body)
+
+
+@app.route("/quiz/<lesson_id>/answer", methods=["POST"])
+def quiz_answer(lesson_id):
+    l = curriculum.get_lesson(lesson_id)
+    if not l or not l.is_available:
+        return jsonify({"error": "Unknown lesson."}), 404
+    lesson_body = curriculum.lesson_text(l)
+    questions = quiz.parse_quiz(lesson_body)
+    payload = request.get_json(force=True)
+    try:
+        idx = int(payload.get("question_idx", -1))
+    except (TypeError, ValueError):
+        idx = -1
+    answer = (payload.get("answer") or "").strip()
+    if not 0 <= idx < len(questions):
+        return jsonify({"error": "Unknown question."}), 400
+    if not answer:
+        return jsonify({"error": "Write an answer first."}), 400
+    if not ollama_client.is_up():
+        return jsonify({"error": "Tutor offline — start Ollama to grade answers."}), 503
+    verdict = quiz.grade_answer(questions[idx], answer, lesson_body)
+    quiz.record_quiz_result(l.id, idx, verdict["correct"])
+    return jsonify(verdict)
 
 
 @app.route("/ask", methods=["POST"])
