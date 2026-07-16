@@ -20,6 +20,19 @@ def is_up() -> bool:
         return False
 
 
+def generate(system: str, prompt: str, json_format: bool = False) -> str:
+    """Low-level single-shot generation with a caller-supplied system prompt.
+    Additive helper for other tutor modules (e.g. quiz grading, ADR-022)."""
+    payload = {"model": config.OLLAMA_MODEL, "system": system,
+               "prompt": prompt, "stream": False}
+    if json_format:
+        payload["format"] = "json"
+    resp = requests.post(f"{config.OLLAMA_URL}/api/generate", json=payload,
+                         timeout=config.OLLAMA_TIMEOUT_SECONDS)
+    resp.raise_for_status()
+    return resp.json().get("response", "").strip()
+
+
 def ask(question: str, grounding: str = "") -> str:
     prompt = (
         f"LESSON CONTENT:\n{grounding or '(no lesson selected)'}\n\n"

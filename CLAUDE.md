@@ -32,6 +32,7 @@ practices worth learning. No cloud deployment — local only, like oska_app.
 | `tutor/curriculum.py` | Loads `curriculum/index.yaml`, reads lesson markdown. |
 | `tutor/ollama_client.py` | `ask(question, grounding)` → Ollama /api/generate. |
 | `tutor/progress.py` | Lesson completion → `data/progress.json` (gitignored). |
+| `tutor/quiz.py` | Quiz engine (ADR-022): parse `## Quiz`, grade answers vs lesson text via Ollama, record to progress.json `quiz` key. |
 | `curriculum/index.yaml` | Catalog: id, title, track, status, source projects. |
 | `curriculum/<id>.md` | One lesson per file. Filename = lesson id. |
 
