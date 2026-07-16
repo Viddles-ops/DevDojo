@@ -93,7 +93,7 @@ lessons:
   - id: grow-103
     title: "GitHub Actions: your first CI pipeline"
     track: grow
-    status: planned
+    status: available
     summary: "Run pytest automatically on every push — the natural next step after DeployGuard."
     sources: []
   - id: grow-104
