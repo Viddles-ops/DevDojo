@@ -50,6 +50,12 @@ lessons:
     status: planned
     summary: "How a button in a Sheet triggers a Cloud Function, and idempotent sheet writes."
     sources: [po-intake-automation]
+  - id: stack-109
+    title: "On-demand branded docs: the Jett Marketing Agent"
+    track: stack
+    status: available
+    summary: "Compute-then-narrate reused for marketing PDFs, an aggregates-only PHI firewall, and one capability behind three front doors (HTTP, CLI, agent)."
+    sources: [jett-marketing-agent, oska-platform, pemf-bot-v2]
 
   # ── Track: claude-code — the tool you drive every day ──────────────────
   - id: cc-101
