@@ -47,7 +47,7 @@ lessons:
   - id: stack-108
     title: "Google Sheets/Drive APIs + Apps Script buttons"
     track: stack
-    status: planned
+    status: available
     summary: "How a button in a Sheet triggers a Cloud Function, and idempotent sheet writes."
     sources: [po-intake-automation]
 
