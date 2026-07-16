@@ -99,7 +99,7 @@ lessons:
   - id: grow-104
     title: "Logging and error handling patterns"
     track: grow
-    status: planned
+    status: available
     summary: "From print() to structured logs; what to do when an API call fails at 2am in a Cloud Function."
     sources: [po-intake-automation]
   - id: grow-105
