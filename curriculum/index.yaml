@@ -41,7 +41,7 @@ lessons:
   - id: stack-107
     title: "Flask vs Streamlit: picking a front door"
     track: stack
-    status: planned
+    status: available
     summary: "oska_app (Flask) vs jett_automations (Streamlit) — what each buys you."
     sources: [oska-platform, po-intake-automation]
   - id: stack-108
