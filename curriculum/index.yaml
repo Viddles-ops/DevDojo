@@ -87,7 +87,7 @@ lessons:
   - id: grow-102
     title: "Type hints + ruff: cheap correctness"
     track: grow
-    status: planned
+    status: available
     summary: "You already write some hints (DeployGuard does) — make it systematic and add a linter."
     sources: [DeployGuard]
   - id: grow-103
