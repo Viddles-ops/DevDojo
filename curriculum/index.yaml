@@ -35,7 +35,7 @@ lessons:
   - id: stack-106
     title: "Medallion + master data: the OSKA pipeline"
     track: stack
-    status: planned
+    status: available
     summary: "Bronze/Silver/Gold, why PHI stops at Bronze, and what an upsert with a curation overlay means."
     sources: [oska-platform]
   - id: stack-107
