@@ -29,7 +29,7 @@ lessons:
   - id: stack-105
     title: "RAG anatomy: how jAIme finds the right study"
     track: stack
-    status: planned
+    status: available
     summary: "Chunking, embeddings, MMR retrieval — the pieces of pemf_bot_v2's index."
     sources: [pemf-bot-v2]
   - id: stack-106
