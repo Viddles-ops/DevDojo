@@ -67,7 +67,7 @@ lessons:
   - id: cc-103
     title: "Skills and slash commands: extending Claude Code"
     track: claude-code
-    status: planned
+    status: available
     summary: "What /commands are, which skills you have, and when to build your own."
     sources: []
   - id: cc-104
