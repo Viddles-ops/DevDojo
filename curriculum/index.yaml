@@ -105,6 +105,6 @@ lessons:
   - id: grow-105
     title: "Dependency hygiene: venvs, pinning, and uv"
     track: grow
-    status: planned
+    status: available
     summary: "Why every project has its own .venv, when to pin versions, and the modern uv tool."
-    sources: []
+    sources: [DevDojo]
