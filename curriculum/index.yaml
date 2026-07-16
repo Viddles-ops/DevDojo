@@ -73,7 +73,7 @@ lessons:
   - id: cc-104
     title: "Microtasks, decisions, handoffs: the operator workflow"
     track: claude-code
-    status: planned
+    status: available
     summary: "Why ~30-minute tasks with done-checks beat big vague asks, and how ADRs stop re-deciding."
     sources: [_operator]
 
