@@ -161,6 +161,6 @@ lessons:
   - id: agent-109
     title: "Do agents learn? Evals, feedback loops, and honest mental models"
     track: agents
-    status: planned
+    status: available
     summary: "Agents do not machine-learn from use. What improvement actually means: evals, feedback loops, and the prompt/RAG/memory/fine-tune decision tree."
     sources: [OpsForge, _operator, DevDojo]
