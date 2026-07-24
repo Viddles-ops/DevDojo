@@ -125,7 +125,7 @@ lessons:
   - id: agent-103
     title: "The framework landscape: Claude Agent SDK, LangGraph, or plain Python"
     track: agents
-    status: planned
+    status: available
     summary: "An honest survey — and why OpsForge ships a real agent with no agent framework at all."
     sources: [OpsForge]
   - id: agent-104
