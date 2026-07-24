@@ -137,7 +137,7 @@ lessons:
   - id: agent-105
     title: "Agent memory I: the context window and summarization"
     track: agents
-    status: planned
+    status: available
     summary: "Short-term memory is whatever fits in the prompt. Grounding, context assembly, and compaction as the three moves."
     sources: [OpsForge, DevDojo]
   - id: agent-106
