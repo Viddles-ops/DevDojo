@@ -131,7 +131,7 @@ lessons:
   - id: agent-104
     title: "MCP: the USB port for agent tools"
     track: agents
-    status: planned
+    status: available
     summary: "What Model Context Protocol is, servers vs tools, and how OpsForge's hand-built transport layer had the same instinct."
     sources: [OpsForge]
   - id: agent-105
