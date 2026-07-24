@@ -113,7 +113,7 @@ lessons:
   - id: agent-101
     title: "What an agent actually is: model + tools + loop + state"
     track: agents
-    status: planned
+    status: available
     summary: "Kill the magic — an agent is an LLM in a perceive-decide-act loop with tools and state. OpsForge's coded loop next to the operator's prose loop."
     sources: [OpsForge, _operator]
   - id: agent-102
