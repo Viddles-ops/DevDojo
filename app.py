@@ -8,6 +8,7 @@ from tutor import curriculum, ollama_client, progress, quiz
 app = Flask(__name__)
 
 PAGE = """<!doctype html><html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DevDojo</title>
 <style>
  body{font-family:Segoe UI,system-ui,sans-serif;max-width:860px;margin:2rem auto;
