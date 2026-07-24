@@ -155,7 +155,7 @@ lessons:
   - id: agent-108
     title: "Shipping an agent: guardrails, logging, and the human in the loop"
     track: agents
-    status: planned
+    status: available
     summary: "Deployment is mostly safety engineering — log everything, gate the dangerous parts, keep a human at the irreversible steps."
     sources: [OpsForge, DeployGuard]
   - id: agent-109
