@@ -149,7 +149,7 @@ lessons:
   - id: agent-107
     title: "Orchestration: one agent driving others"
     track: agents
-    status: planned
+    status: available
     summary: "Orchestrator vs peer topologies, using the operator's delegation model and OpsForge's recommend-never-assign stance."
     sources: [_operator, OpsForge]
   - id: agent-108
