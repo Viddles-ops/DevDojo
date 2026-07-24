@@ -119,7 +119,7 @@ lessons:
   - id: agent-102
     title: "Tool use: how an LLM does things"
     track: agents
-    status: planned
+    status: available
     summary: "Tool schemas, the call/result round trip, and why narrow tool surfaces beat broad ones — deploy-guard as the worked example."
     sources: [DeployGuard]
   - id: agent-103
