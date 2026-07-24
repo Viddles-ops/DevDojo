@@ -143,7 +143,7 @@ lessons:
   - id: agent-106
     title: "Agent memory II: persistent state, files vs DB, retrieval"
     track: agents
-    status: planned
+    status: available
     summary: "Memory that survives the process — SQLite ledgers, markdown state files, and RAG-as-memory, and when each fits."
     sources: [OpsForge, _operator]
   - id: agent-107
