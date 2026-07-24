@@ -26,6 +26,7 @@ practices worth learning. No cloud deployment — local only, like oska_app.
 | File | Role |
 |---|---|
 | `run.ps1` | One-command launch: `.\run.ps1`. Thin wrapper over the launcher. |
+| `stop.ps1` | Kill every DevDojo instance and free the port. Run before relaunching — `run.ps1` spawns a child `app.py` that Ctrl-C leaves running and holding the port, so restarts otherwise stack zombies that serve stale in-memory config. |
 | `tutor/launcher.py` | Bootstrap + launch, **stdlib only** — creates/refreshes `.venv`, then runs app.py with the venv python. Must never import third-party packages (it runs before they're installed, possibly under another project's Python). |
 | `app.py` | Flask routes + inline templates. No business logic. |
 | `config.py` | Ports, paths, Ollama settings. No secrets (none needed). |
