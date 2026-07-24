@@ -18,4 +18,5 @@ TRACKS = {
     "stack": "Your Stack — how your projects work",
     "claude-code": "Claude Code — agents, skills, workflow",
     "grow": "Grow — practices to adopt next",
+    "agents": "Agents — design, build, and ship AI agents",
 }

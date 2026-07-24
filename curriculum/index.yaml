@@ -108,3 +108,59 @@ lessons:
     status: available
     summary: "Why every project has its own .venv, when to pin versions, and the modern uv tool."
     sources: [DevDojo]
+
+  # ── Track: agents — design, build, and ship AI agents ──────────────────
+  - id: agent-101
+    title: "What an agent actually is: model + tools + loop + state"
+    track: agents
+    status: planned
+    summary: "Kill the magic — an agent is an LLM in a perceive-decide-act loop with tools and state. OpsForge's coded loop next to the operator's prose loop."
+    sources: [OpsForge, _operator]
+  - id: agent-102
+    title: "Tool use: how an LLM does things"
+    track: agents
+    status: planned
+    summary: "Tool schemas, the call/result round trip, and why narrow tool surfaces beat broad ones — deploy-guard as the worked example."
+    sources: [DeployGuard]
+  - id: agent-103
+    title: "The framework landscape: Claude Agent SDK, LangGraph, or plain Python"
+    track: agents
+    status: planned
+    summary: "An honest survey — and why OpsForge ships a real agent with no agent framework at all."
+    sources: [OpsForge]
+  - id: agent-104
+    title: "MCP: the USB port for agent tools"
+    track: agents
+    status: planned
+    summary: "What Model Context Protocol is, servers vs tools, and how OpsForge's hand-built transport layer had the same instinct."
+    sources: [OpsForge]
+  - id: agent-105
+    title: "Agent memory I: the context window and summarization"
+    track: agents
+    status: planned
+    summary: "Short-term memory is whatever fits in the prompt. Grounding, context assembly, and compaction as the three moves."
+    sources: [OpsForge, DevDojo]
+  - id: agent-106
+    title: "Agent memory II: persistent state, files vs DB, retrieval"
+    track: agents
+    status: planned
+    summary: "Memory that survives the process — SQLite ledgers, markdown state files, and RAG-as-memory, and when each fits."
+    sources: [OpsForge, _operator]
+  - id: agent-107
+    title: "Orchestration: one agent driving others"
+    track: agents
+    status: planned
+    summary: "Orchestrator vs peer topologies, using the operator's delegation model and OpsForge's recommend-never-assign stance."
+    sources: [_operator, OpsForge]
+  - id: agent-108
+    title: "Shipping an agent: guardrails, logging, and the human in the loop"
+    track: agents
+    status: planned
+    summary: "Deployment is mostly safety engineering — log everything, gate the dangerous parts, keep a human at the irreversible steps."
+    sources: [OpsForge, DeployGuard]
+  - id: agent-109
+    title: "Do agents learn? Evals, feedback loops, and honest mental models"
+    track: agents
+    status: planned
+    summary: "Agents do not machine-learn from use. What improvement actually means: evals, feedback loops, and the prompt/RAG/memory/fine-tune decision tree."
+    sources: [OpsForge, _operator, DevDojo]
